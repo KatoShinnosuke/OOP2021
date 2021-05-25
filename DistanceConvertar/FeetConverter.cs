@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DistanceConvertar {
-    class FeetConverter {
-        public double FromMeter(double meter) {
+    //フィートとメートルの単位変換クラス（静的クラス）
+   public static class FeetConverter {
+        public static double FromMeter(double meter) {
             return meter / 0.3048;
         }
 
-        public double ToMeter(double feet) {
+        public static double ToMeter(double feet) {
             return feet * 0.3048;
         }
     }
