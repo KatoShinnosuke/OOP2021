@@ -18,25 +18,19 @@ namespace DistanceConvertar {
         //フォール度からメートルへの対応表を出力
         private static void PrintMeterToFeetList(int start,int stop) {
             for (int meter = start; meter <= stop; meter++) {
-                double feet = MeterToFeet(meter);
+                FeetConverter converter = new FeetConverter();
+                double feet = converter.FromMeter(meter);
                 Console.WriteLine("{0} m = {1:0.0000} fm", meter, feet);
 
             }
         }
         //フォール度からメートルへの対応表を出力
         private static void PrintFeetToMeterList(int start, int stop) {
+            FeetConverter converter = new FeetConverter();
             for (int feet = start; feet <= stop; feet++) {
-                double meter = FeetToMeter(feet);
+                double meter = converter.ToMeter(feet);
                 Console.WriteLine("{0} ft = {1:0.0000} m", feet, meter);
             }
-        }
-
-        //フィートからメートルを求める
-        static double FeetToMeter(int feet) {
-                return feet * 0.3048;           
-        }
-        static double MeterToFeet(int meter) {
-            return meter / 0.3048;
         }
     }
 }
