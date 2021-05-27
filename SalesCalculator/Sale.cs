@@ -8,9 +8,9 @@ namespace SalesCalculator {
     //売上クラス
     class Sale {
         //店舗名
-        public String ShopName { get; set; }
+        public string ShopName { get; set; }
         //商品カテゴリー
-        public String ProductCategory { get; set; }
+        public string ProductCategory { get; set; }
         //売上高
         public int Amount { get; set; }
     }
