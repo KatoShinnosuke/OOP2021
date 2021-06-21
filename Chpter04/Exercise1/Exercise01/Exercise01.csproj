@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A46E3A8-A8AD-4C65-9A4B-DE992CCA209F}</ProjectGuid>
+    <ProjectGuid>{52650109-29A1-4AFD-A5C2-0EF7E270BCCC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Section1</RootNamespace>
-    <AssemblyName>Section1</AssemblyName>
+    <RootNamespace>Exercise01</RootNamespace>
+    <AssemblyName>Exercise01</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="YearMonth.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YearNonth.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
