@@ -1,6 +1,6 @@
 ﻿
 namespace StopWatch {
-    partial class Stopwatch {
+    partial class Form1 {
         /// <summary>
         /// 必要なデザイナー変数です。
         /// </summary>
@@ -24,45 +24,82 @@ namespace StopWatch {
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
-            this.lbTimerDisp = new System.Windows.Forms.Button();
-            this.Elapsed = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.tbStart = new System.Windows.Forms.Button();
+            this.btstop = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btReset = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tmDisp = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // lbTimerDisp
+            // tbStart
             // 
-            this.lbTimerDisp.Location = new System.Drawing.Point(30, 123);
-            this.lbTimerDisp.Name = "lbTimerDisp";
-            this.lbTimerDisp.Size = new System.Drawing.Size(122, 108);
-            this.lbTimerDisp.TabIndex = 0;
-            this.lbTimerDisp.Text = "button1";
-            this.lbTimerDisp.UseVisualStyleBackColor = true;
+            this.tbStart.Location = new System.Drawing.Point(52, 141);
+            this.tbStart.Name = "tbStart";
+            this.tbStart.Size = new System.Drawing.Size(122, 108);
+            this.tbStart.TabIndex = 0;
+            this.tbStart.Text = "スタート";
+            this.tbStart.UseVisualStyleBackColor = true;
+            this.tbStart.Click += new System.EventHandler(this.lbTimerDisp_Click);
             // 
-            // Elapsed
+            // btstop
             // 
-            this.Elapsed.Location = new System.Drawing.Point(217, 123);
-            this.Elapsed.Name = "Elapsed";
-            this.Elapsed.Size = new System.Drawing.Size(122, 108);
-            this.Elapsed.TabIndex = 0;
-            this.Elapsed.Text = "button1";
-            this.Elapsed.UseVisualStyleBackColor = true;
+            this.btstop.Location = new System.Drawing.Point(180, 141);
+            this.btstop.Name = "btstop";
+            this.btstop.Size = new System.Drawing.Size(122, 108);
+            this.btstop.TabIndex = 0;
+            this.btstop.Text = "ストップ";
+            this.btstop.UseVisualStyleBackColor = true;
+            this.btstop.Click += new System.EventHandler(this.btstop_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 67);
+            this.textBox1.Location = new System.Drawing.Point(52, 94);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 19);
+            this.textBox1.Size = new System.Drawing.Size(250, 19);
             this.textBox1.TabIndex = 1;
             // 
-            // Stopwatch
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(52, 255);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(122, 108);
+            this.btReset.TabIndex = 0;
+            this.btReset.Text = "リセット";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(180, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 108);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "ラップ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(339, 94);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(186, 269);
+            this.textBox2.TabIndex = 1;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Elapsed);
-            this.Controls.Add(this.lbTimerDisp);
-            this.Name = "Stopwatch";
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btstop);
+            this.Controls.Add(this.btReset);
+            this.Controls.Add(this.tbStart);
+            this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -72,9 +109,13 @@ namespace StopWatch {
 
         #endregion
 
-        private System.Windows.Forms.Button lbTimerDisp;
-        private System.Windows.Forms.Button Elapsed;
+        private System.Windows.Forms.Button tbStart;
+        private System.Windows.Forms.Button btstop;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Timer tmDisp;
     }
 }
 
