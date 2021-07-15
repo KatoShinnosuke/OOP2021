@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace carReportSystem {
+    [Serializable]
     public partial class fmMain : Form {
         BindingList<CarReport> listCarReport = new BindingList<CarReport>();
         public fmMain() {
@@ -115,8 +118,37 @@ namespace carReportSystem {
         }
 
         private void btDataCorrect_Click(object sender, EventArgs e) {
-            listCarReport[0].UpDate(dtpDate.Value,cbAuthor.Text,selectedGroup(),
+            listCarReport[dgvRegistData.CurrentRow.Index].UpDate(dtpDate.Value,
+                cbAuthor.Text,selectedGroup(),
                 cbCarName.Text,tbReport.Text,pbPicture.Image);
+            dgvRegistData.Refresh();//コントロールの強制再描画
+        }
+
+        private void fmMain_Load(object sender, EventArgs e) {
+
+        }
+        //保存
+        private void btSeve_Click(object sender, EventArgs e) {
+            if (sfdFileSeve.ShowDialog() == DialogResult.OK)  {
+                BinaryFormatter bf = new BinaryFormatter();
+
+                using (FileStream fs = File.Open(sfdFileSeve.FileName,FileMode.Create)) {
+                    bf.Serialize(fs, listCarReport);
+                }
+            }
+        }
+
+        private void btOpen_Click(object sender, EventArgs e) {
+            if (ofdFileOpen.ShowDialog() == DialogResult.OK) {
+                //バイナリ形式で逆シリアル化
+                var bf = new BinaryFormatter();
+                using (FileStream fs = File.Open(ofdFileOpen.FileName,FileMode.Open,FileAccess.Read)) {
+                    //逆シリアル化
+                    listCarReport = (BindingList<CarReport>)bf.Deserialize(fs);
+                    dgvRegistData.DataSource = null;
+                    dgvRegistData.DataSource = listCarReport;
+                }
+            }
         }
     }
 }

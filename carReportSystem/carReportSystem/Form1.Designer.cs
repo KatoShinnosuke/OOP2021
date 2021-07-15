@@ -321,6 +321,7 @@ namespace carReportSystem {
             this.btOpen.TabIndex = 7;
             this.btOpen.Text = "開く";
             this.btOpen.UseVisualStyleBackColor = true;
+            this.btOpen.Click += new System.EventHandler(this.btOpen_Click);
             // 
             // btSeve
             // 
@@ -330,6 +331,7 @@ namespace carReportSystem {
             this.btSeve.TabIndex = 7;
             this.btSeve.Text = "保存";
             this.btSeve.UseVisualStyleBackColor = true;
+            this.btSeve.Click += new System.EventHandler(this.btSeve_Click);
             // 
             // btExit
             // 
@@ -379,6 +381,7 @@ namespace carReportSystem {
             this.MaximizeBox = false;
             this.Name = "fmMain";
             this.Text = "市場レポート管理システム";
+            this.Load += new System.EventHandler(this.fmMain_Load);
             this.gbMaker.ResumeLayout(false);
             this.gbMaker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
