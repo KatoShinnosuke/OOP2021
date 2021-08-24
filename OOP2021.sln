@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "carReportSystem", "carRepor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Execise1", "Chapter09\Execise1\Execise1.csproj", "{2919B9D6-B766-4460-9AFF-A04546974E59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sampke0823", "Sampke0823\Sampke0823.csproj", "{31FA8596-A3C1-4A23-B914-4268DCF5CBBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -178,6 +180,10 @@ Global
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FA8596-A3C1-4A23-B914-4268DCF5CBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FA8596-A3C1-4A23-B914-4268DCF5CBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FA8596-A3C1-4A23-B914-4268DCF5CBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FA8596-A3C1-4A23-B914-4268DCF5CBBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
