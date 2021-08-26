@@ -19,7 +19,7 @@ namespace Sampke0823
 
         private void exec_Click(object sender, EventArgs e)
         {
-            int value = int.Parse(Value.Text);
+            int value = int.Parse(Value.Text);//整数に変換
             int jyou = int.Parse(Jyou.Text);
 
             double resule = Math.Pow(value, jyou);
