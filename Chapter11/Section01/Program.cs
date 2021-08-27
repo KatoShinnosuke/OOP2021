@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;w
+using System.Xml.Linq;
 
 namespace Section01
 {
@@ -11,19 +11,40 @@ namespace Section01
     {
         static void Main(string[] args)
         {
-            var xdoc = XDocument.Load("novelists.xml");
-            var novelists = xdoc.Root.Elements();
-                                .Select(x=>new
-                                {
-                                    Name = (string)x.Element("name"),
-                                    Birth = (DateTime)x.Element("birth"),
-                                    Death = (DateTime)x.Element("death")
-                                });
+           var novelists = ReadNovelists();
             foreach (var novelist in novelists){
                 
-                Console.WriteLine("{0}({1}-{2})",
-                    novelist.Name,novelist.Birth.Year,novelist.Death.Year);
+                Console.WriteLine("{0}({1}-{2})-{3}",
+                    novelist.Name,novelist.Birth.Year,novelist.Death.Year,
+                    string.Join( ",",novelist.Masterpieces));
             }
         }
+
+       static public IEnumerable<Novelist>ReadNovelists()
+        { 
+ var xdoc = XDocument.Load("novelists.xml");
+            var novelists = xdoc.Root.Elements()
+                                .Select(x => new Novelist
+                                {
+                                    Name = (string)x.Element("name"),
+                                    KanaName = (string)x.Element("name").Attribute("kana"),
+                                    Birth = (DateTime)x.Element("birth"),
+                                    Death = (DateTime)x.Element("death"),
+                                    Masterpieces = x.Element("masterpieces")
+                                                    .Elements("title")
+                                                    .Select(title => title.Value)
+                                                    .ToArray()
+                                }) ; 
+        return novelists.ToArray();
+        }
+    }
+
+    internal class Novelist
+    {
+        public string Name { get; set; }
+        public string KanaName { get; set; }
+        public DateTime Birth { get; set; }
+        public DateTime Death { get; set; }
+        public string[] Masterpieces { get; set; }
     }
 }
