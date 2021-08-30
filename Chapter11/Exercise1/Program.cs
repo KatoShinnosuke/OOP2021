@@ -20,6 +20,9 @@ namespace Exercise1
 
             Exercise1_3(file);
             Console.WriteLine("-------");
+
+            Exercise1_4(file);
+            Console.WriteLine("-------");
         }
 
         private static void Exercise1_1(string file)
@@ -66,6 +69,15 @@ namespace Exercise1
                 .First();
 
             Console.WriteLine("{0}", sports.Name);
+        }
+        private static void Exercise1_4(string file){
+            var newfile = "sport.xml";
+
+            var element = new XElement("ballSports",
+                new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
+                new XElement("teammember", "11"),
+                new XElement("firstplayed", "1800")
+                );
         }
     }
 }
