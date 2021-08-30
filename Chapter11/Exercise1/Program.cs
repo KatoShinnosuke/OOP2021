@@ -31,6 +31,10 @@ namespace Exercise1
                                 Name = xdoc.Element("name").Value,
                                 Teammembers = xdoc.Element("teammembers").Value
                             });
+            foreach (var sport in sports)
+            {
+                Console.WriteLine("{0}{1}", sport.Name, sport.Teammembers);
+            }
 
         }
 
@@ -51,6 +55,17 @@ namespace Exercise1
 
         private static void Exercise1_3(string file)
         {
+            var xdoc = XDocument.Load(file);
+            var sports = xdoc.Root.Elements()
+                .Select(x => new
+                {
+                    Name = x.Element("name").Value,
+                    Teammembers = x.Element("teammembers").Value
+                })
+                .OrderByDescending(x => int.Parse(x.Teammembers))
+                .First();
+
+            Console.WriteLine("{0}", sports.Name);
         }
     }
 }
