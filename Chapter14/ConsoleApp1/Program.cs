@@ -12,6 +12,13 @@ namespace Section04
 {
     class Program
     {
+        Dictionary<string, int> AreaDic = new Dictionary<string, int>()
+        {
+            {"前橋",4210 },
+            {"みなかみ",4220 },
+            {"宇都宮",4110 },
+            {"水戸",4010 },
+        };
         static void Main(string[] args)
         {
             new Program();
@@ -19,19 +26,31 @@ namespace Section04
        // コンストラクタ
            public Program()
         {
-            //DownloadString();
-            //DoenloadFoleAsync();
-            //OpenReadSample();
-            var results = GetWeatherReportFromYahoo(4610);
+            Console.WriteLine("yahoo!週間天気予報");
+            Console.WriteLine();
+            Console.WriteLine("地域コードを入力");
+            for (int i = 0; i < AreaDic.Count; i++)
+            {
+                Console.WriteLine("{0}:{1}", i + 1);
+            }
+            Console.WriteLine("1:前橋");
+            Console.WriteLine("2:みなかみ");
+            Console.WriteLine("3:宇都宮");
+            Console.WriteLine("4:水戸");
+            Console.WriteLine("9:その他(直接入力)");
+            Console.WriteLine();
+
+            Console.Write(">");
+            var selectArea = Console.ReadLine();
+           
+            var results = GetWeatherReportFromYahoo(4410);
+            foreach (var s in results)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine();
         }
-       //リスト14.15
-           public void DownloadString()
-        {
-            var wc = new WebClient();
-            wc.Encoding = Encoding.UTF8;
-            var html = wc.DownloadString("https://yahoo.co.jp/");
-            Console.WriteLine(html);
-        }
+       
        //リスト14.17
          private void DownloadFileAsync()
         {
