@@ -19,6 +19,7 @@ namespace Section04
             {"宇都宮",4110 },
             {"水戸",4010 },
         };
+        List<int> cityCode = new List<int>();
         static void Main(string[] args)
         {
             new Program();
@@ -29,9 +30,11 @@ namespace Section04
             Console.WriteLine("yahoo!週間天気予報");
             Console.WriteLine();
             Console.WriteLine("地域コードを入力");
-            for (int i = 0; i < AreaDic.Count; i++)
+            int num = 1;
+            foreach (KeyValuePair<string,int>pair in AreaDic)
             {
-                Console.WriteLine("{0}:{1}", i + 1);
+                Console.WriteLine("{0}:{1}",num++,pair.Key);
+                cityCode.Add(pair.Value);
             }
             Console.WriteLine("1:前橋");
             Console.WriteLine("2:みなかみ");
@@ -42,11 +45,26 @@ namespace Section04
 
             Console.Write(">");
             var selectArea = Console.ReadLine();
-           
-            var results = GetWeatherReportFromYahoo(4410);
+            int pos = int.Parse(selectArea);
+
+            IEnumerable<string> results;
+
+            if (pos != 9)
+            {
+                _ = GetWeatherReportFromYahoo(cityCode[pos - 1]);
+            }
+            else
+            {
+                Console.Write("都市コードを入力");
+                var inputCode = Console.ReadLine();
+                results = GetWeatherReportFromYahoo(int.Parse(inputCode)); ;
+            }
+
+
+
             foreach (var s in results)
             {
-                Console.WriteLine();
+                Console.WriteLine(s);
             }
             Console.WriteLine();
         }
