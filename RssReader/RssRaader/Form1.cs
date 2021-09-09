@@ -22,6 +22,7 @@ namespace RssRaader
         private void btRead_Click(object sender, EventArgs e)
         {
             SetRssTitle(tbUrl.Text);
+           // リンク先のList[lbTitle.SelectedIndex];
         }
         private void SetRssTitle(string url)
         {
@@ -39,6 +40,8 @@ namespace RssRaader
                 foreach (var node in nodes)
                 {
                     lbTitle.Items.Add(node.Value);
+                    List<string> link = new List<string>();
+                    //link.Add();
                 }
             }
         }
