@@ -90,7 +90,7 @@ namespace RssRaader
             this.Controls.Add(this.RssReader);
             this.Controls.Add(this.tbUrl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "32057";
             this.ResumeLayout(false);
             this.PerformLayout();
 

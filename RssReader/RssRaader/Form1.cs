@@ -21,21 +21,25 @@ namespace RssRaader
 
         private void btRead_Click(object sender, EventArgs e)
         {
-            
+            SetRssTitle(tbUrl.Text);
         }
         private void SetRssTitle(string url)
         {
             using (var wc = new WebClient())
             {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
-                var uriString = string.Format(
-                    @"http://rss.weather.yahoo.co.jp/rss/days/{0}.xml");
-                var url = new Uri(uriString);
+                
+                var tbUrl = new Uri(url);
+                
                 var stream = wc.OpenRead(url);
 
                 XDocument xdoc = XDocument.Load(stream);
                 var nodes = xdoc.Root.Descendants("title");
-                
+
+                foreach (var node in nodes)
+                {
+                    lbTitle.Items.Add(node.Value);
+                }
             }
         }
     }
