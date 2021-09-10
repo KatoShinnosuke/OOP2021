@@ -70,6 +70,7 @@ namespace RssRaader
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(161, 292);
             this.lbTitle.TabIndex = 5;
+            this.lbTitle.SelectedIndexChanged += new System.EventHandler(this.lbTitle_SelectedIndexChanged);
             // 
             // WebBrowser
             // 

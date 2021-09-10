@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace RssRaader
     public partial class Form1 : Form
     {
         public Form1()
+        
         {
             InitializeComponent();
         }
@@ -30,20 +32,31 @@ namespace RssRaader
             {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
                 
-                var tbUrl = new Uri(url);
                 
                 var stream = wc.OpenRead(url);
-
                 XDocument xdoc = XDocument.Load(stream);
+                items = xdoc.Root.Descendants("item").Select(x => new ItemDate
+                {
+                    lbTitle = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    PubDate = (DateTime)x.Element("pubDate"),
+                    Description =(string)x.Element("description")
+
+                });
                 var nodes = xdoc.Root.Descendants("title");
 
                 foreach (var node in nodes)
                 {
-                    lbTitle.Items.Add(node.Value);
-                    List<string> link = new List<string>();
-                    //link.Add();
+                    lbTitle.Items.Add(node.Value);                  
                 }
             }
         }
+
+        private void lbTitle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string link = (items.ToArray())[lbTitle.SelectedIndex].Link;
+            WebBrowser.Url = new Url(link);
+        }
     }
 }
+ 
