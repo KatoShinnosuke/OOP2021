@@ -15,6 +15,8 @@ namespace RssRaader
 {
     public partial class Form1 : Form
     {
+        private object items;
+
         public Form1()
         
         {
@@ -52,9 +54,10 @@ namespace RssRaader
             }
         }
 
+
         private void lbTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string link = (items.ToArray())[lbTitle.SelectedIndex].Link;
+            
             WebBrowser.Url = new Url(link);
         }
     }
