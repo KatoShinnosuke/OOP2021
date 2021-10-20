@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "carReportSystem", "carRepor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Execise1", "Chapter09\Execise1\Execise1.csproj", "{2919B9D6-B766-4460-9AFF-A04546974E59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumpleEntityFramework", "Entity Framework\SumpleEntityFramework\SumpleEntityFramework.csproj", "{4D0DB0D4-B8CE-48C6-8FEB-0C4CD8D72BEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -178,6 +180,10 @@ Global
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2919B9D6-B766-4460-9AFF-A04546974E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0DB0D4-B8CE-48C6-8FEB-0C4CD8D72BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0DB0D4-B8CE-48C6-8FEB-0C4CD8D72BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0DB0D4-B8CE-48C6-8FEB-0C4CD8D72BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0DB0D4-B8CE-48C6-8FEB-0C4CD8D72BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
