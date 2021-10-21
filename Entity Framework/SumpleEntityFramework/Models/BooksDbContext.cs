@@ -22,7 +22,7 @@ namespace SumpleEntityFramework.Models
         // 詳細については、http://go.microsoft.com/fwlink/?LinkId=390109 を参照してください。
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Books> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
     }
 

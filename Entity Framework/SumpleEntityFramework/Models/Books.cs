@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SumpleEntityFramework.Models
 {
-    public class Book
+    public class Books
     {
         public int Id { get; set; }
         [Required]
@@ -16,6 +16,7 @@ namespace SumpleEntityFramework.Models
         public string Publisher { get; set; }
         public int PublishedYear { get; set; }
         public Author Author { get; set; }
+        public Books book { get; set; }
 
     
     }
