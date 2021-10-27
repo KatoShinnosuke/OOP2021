@@ -23,7 +23,55 @@ namespace SumpleEntityFramework
 
         private static void Exercise13_1()
         {
+            using (var db = new BooksDbContext())
+            {
+                var author1 = new Author
+                {
+                    Birthday = new DateTime(1888, 12, 16),
+                    Gender = "M",
+                    Name = "菊池寛"
+                };
 
+                var author2 = new Author
+                {
+                    Birthday = new DateTime(1899, 6, 14),
+                    Gender = "M",
+                    Name = "川端康成"
+                };
+                db.Authors.Add(author2);
+
+
+
+                var book1 = new Books
+                {
+                    Title = "こころ",
+                    PublishedYear = 1991,
+                    Author = db.Authors.Single(a => a.Name == "夏目漱石"),
+                };
+
+                var book2 = new Books
+                {
+                    Title = "伊豆の踊子",
+                    PublishedYear = 2003,
+                    Author = db.Authors.Single(a => a.Name == "川端康成"),
+                };
+                db.Books.Add(book2);
+
+                var book3 = new Books
+                {
+                    Title = "真珠夫人",
+                    PublishedYear = 2002,
+                    Author = db.Authors.Single(a => a.Name == "菊池寛"),
+                };
+
+                var book4 = new Books
+                {
+                    Title = "注文の多い料理店",
+                    PublishedYear = 2000,
+                    Author = db.Authors.Single(a => a.Name == "宮沢賢治"),
+                };
+                db.Books.Add(book4);
+            }
         }
         private static void Exercise13_2()
         {
@@ -81,7 +129,7 @@ namespace SumpleEntityFramework
                     var books = db.Books.Where(x => x.Author.Name == author.Name);
                     foreach (var book in books)
                     {
-
+                        Console.WriteLine("{0}{1}", book.Title, book.PublishedYear);
                     }
                 }
                 Console.WriteLine();
