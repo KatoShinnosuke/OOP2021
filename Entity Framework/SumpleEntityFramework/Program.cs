@@ -74,10 +74,15 @@ namespace SumpleEntityFramework
             {
                 var authors = db.Authors
                     .OrderByDescending(a => a.Birthday);
-                foreach (var book in authors)
+                foreach (var author in authors)
                 {
                     Console.WriteLine
-                        ("{0}{1}", book.Title, book.PublishedYear, book.Author.Name, book.Author.Birthday);
+                        ("{0}{1}", author.Name, author.Birthday);
+                    var books = db.Books.Where(x => x.Author.Name == author.Name);
+                    foreach (var book in books)
+                    {
+
+                    }
                 }
                 Console.WriteLine();
             }
