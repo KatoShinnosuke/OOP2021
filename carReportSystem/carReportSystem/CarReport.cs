@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace carReportSystem {
+    [Serializable]
     public class CarReport {
         [DisplayName("日付")]
         public DateTime Date { get; set; }
@@ -31,7 +32,7 @@ namespace carReportSystem {
             その他,
         }
         //データ更新
-        public CarReport
+        public void upDate
             (DateTime date,string auther,MakerGroup maker,
             string carname,string report,Image picture) {
             this.Auther = auther;
