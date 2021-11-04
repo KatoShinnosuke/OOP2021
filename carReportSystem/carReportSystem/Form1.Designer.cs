@@ -380,7 +380,7 @@ namespace carReportSystem {
             this.Controls.Add(this.cbAuthor);
             this.MaximizeBox = false;
             this.Name = "fmMain";
-            this.Text = "wadadwadawdadadadadadasdawdas";
+            this.Text = "form";
             this.Load += new System.EventHandler(this.fmMain_Load);
             this.gbMaker.ResumeLayout(false);
             this.gbMaker.PerformLayout();
