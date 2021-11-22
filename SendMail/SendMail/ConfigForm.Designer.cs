@@ -208,7 +208,7 @@ namespace SendMail
             this.btOK.TabIndex = 2;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
-
+            this.btOK.Click += new System.EventHandler(this.btOk_Click);
             // 
             // ConfigForm
             // 

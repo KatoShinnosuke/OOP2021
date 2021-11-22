@@ -23,22 +23,23 @@ namespace SendMail
 {
             tbHost.Text = settings.sHost(); //ホスト名
             tbPort.Text = settings.sPort(); //ポート番号
-            tbUserName.Text = settings.sMailAddr(); //ユーザー名
+            tbUserName.Text = settings.sMailAdder(); //ユーザー名
             tbPass.Text = settings.sPass(); //パスワード
             cbSsl.Checked = settings.bSsl();    //SSL
-            tbSender.Text = settings.sMailAddr();   //送信元
+            tbSender.Text = settings.sMailAdder();   //送信元
         }
         //OKボタン
         private void btOk_Click(object sender, EventArgs e)
         {
-            SettingRegist();
+            this.btApply_Click(sender, e);
             this.Close();
         }
 
         //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
         {
-            SettingRegist();//送信データ登録
+            settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text),
+                tbUserName.Text, tbPass.Text, cbSsl.Checked);
         }
 
         //送信データ登録
@@ -46,7 +47,7 @@ namespace SendMail
 {
             settings.Host = tbHost.Text;
             settings.Port = int.Parse(tbPort.Text);
-            settings.MailAddr = tbUserName.Text;
+            settings.MailAdder = tbUserName.Text;
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
         }
