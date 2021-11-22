@@ -28,19 +28,19 @@ namespace NumberGame
                 InitializeComponent();
         }
 
-        private void ColumnDefinition_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             ChangeBackground((Button)e.Source);
             ResultText((Button)e.Source);
         }
-       // private void Button_Click
+        
         private void ChangeBackground(Button button)
         {
             button.Background = Brushes.Gray;
         }
         private void ResultText(Button button)
         {
-            int bt_num = int.Parse(Button.ContentProperty.ToString());
+            int bt_num = int.Parse(button.Content.ToString());
             if (ans > bt_num)
             {
                 tb.Text = "もっと大きい";
@@ -54,6 +54,16 @@ namespace NumberGame
                 button.Background = Brushes.OrangeRed;
                 tb.Text = "正解";
             }
+        }
+
+        private void bt_1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_9_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
