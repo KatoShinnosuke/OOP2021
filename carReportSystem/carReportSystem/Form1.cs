@@ -78,8 +78,10 @@ namespace carReportSystem {
         }
 
         private void dgvRegistData_CellClick(object sender, DataGridViewCellEventArgs e) {
-            if (e.RowIndex == -1) 
+            if (e.RowIndex == -1)
+            {
                 return;
+            }
             
             //選択された行を取得
             CarReport selectedCar = listCarReport[e.RowIndex];
@@ -98,15 +100,20 @@ namespace carReportSystem {
                         rbToyota.Checked = true;
                         break;
                     case CarReport.MakerGroup.日産:
-                        break;
+                    rbNissan.Checked = true;
+                    break;
                     case CarReport.MakerGroup.ホンダ:
-                        break;
+                    rbHonda.Checked = true;
+                    break;
                     case CarReport.MakerGroup.スバル:
-                        break;
+                    rbSubaru.Checked = true;
+                    break;
                     case CarReport.MakerGroup.外国車:
-                        break;
+                    rbimport.Checked = true;
+                    break;
                     case CarReport.MakerGroup.その他:
-                        break;
+                    rbOther.Checked = true;
+                    break;
                     default:
                         break;
                 
