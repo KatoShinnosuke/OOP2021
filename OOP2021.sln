@@ -143,6 +143,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MusicFM", "MusicFM", "{4E7D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicApp", "MusicApp\MusicApp.csproj", "{8D78E657-20A4-4471-AF0A-75CB936110F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3_System", "Mp3_System\Mp3_System.csproj", "{2DA6981D-FA39-40B7-B052-246BF1E80358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -317,6 +319,10 @@ Global
 		{8D78E657-20A4-4471-AF0A-75CB936110F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D78E657-20A4-4471-AF0A-75CB936110F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D78E657-20A4-4471-AF0A-75CB936110F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA6981D-FA39-40B7-B052-246BF1E80358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA6981D-FA39-40B7-B052-246BF1E80358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA6981D-FA39-40B7-B052-246BF1E80358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA6981D-FA39-40B7-B052-246BF1E80358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,7 +41,8 @@ namespace Music
         
         private void PlaySound(string waveFile)
         {
-            
+            //string fileName = "C:\\music.mp3";
+
             if (player != null)
                 StopSound();
             player = new System.Media.SoundPlayer(waveFile);
@@ -57,6 +58,7 @@ namespace Music
         }
         private void StopSound()
         {
+
             if (player != null)
             {
                 player.Stop();
@@ -72,13 +74,8 @@ namespace Music
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             PlaySound(tb1.Text);
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            this.TopMost = !this.TopMost;
-
         }
     }
 }
